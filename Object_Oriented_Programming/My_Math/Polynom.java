@@ -333,14 +333,16 @@ public class Polynom implements Polynom_able
 		String Polinom = "";
 		for (int i = 0; i < this.poly.size(); i++) 
 		{
-			if (poly.get(i).get_coefficient()>0)
+			if (poly.get(i).get_coefficient() > 0)
 			{
 				Polinom += " + " + this.poly.get(i).toString();
 			}
-			if (poly.get(i).get_coefficient()<0)
+			if (poly.get(i).get_coefficient() < 0)
 			{
-				Polinom += " " + this.poly.get(i).toString();
+				Monom m = new Monom(poly.get(i).get_coefficient() * (-1) , poly.get(i).get_power());
+				Polinom += " - " + m.toString();
 			}	
+			
 		}
 		return Polinom;
 	}
