@@ -330,7 +330,7 @@ public class Polynom implements Polynom_able {
 		}
 		return Polinom;
 	}
-
+//testgit
 	public double Maximum(double x0, double x1, Polynom p) {
 		double start = root(x0, x1, 0.001);
 		double end = x1;
