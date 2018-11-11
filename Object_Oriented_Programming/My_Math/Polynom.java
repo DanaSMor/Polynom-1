@@ -35,14 +35,26 @@ public class Polynom implements Polynom_able {
 	 * 
 	 * @param s represent a String of Polynom
 	 */
-	public Polynom(String s) {
+	public Polynom(String s)
+	{
 		poly = new ArrayList<Monom>();
 		s = s.toLowerCase();
 		s = s.replaceAll(" ", "");
 		s = s.replaceAll("-", "+-");
 		String[] new_s = s.split("\\+");
-		for (int i = 0; i < new_s.length; i++) {
-			add(new Monom(new_s[i]));
+		if (new_s.length>1 && new_s[0].isEmpty())
+		{
+			for (int i = 1; i < new_s.length; i++)
+			{
+				add(new Monom(new_s[i]));
+			}
+		}
+		else
+		{
+			for (int i = 0; i < new_s.length; i++)
+			{
+				add(new Monom(new_s[i]));
+			}
 		}
 
 		Monom_Comperator s_c = new Monom_Comperator();
